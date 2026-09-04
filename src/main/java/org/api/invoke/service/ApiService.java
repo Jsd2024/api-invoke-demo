@@ -1,7 +1,12 @@
 package org.api.invoke.service;
 
+import org.api.invoke.entity.ChatRequest;
+import org.api.invoke.entity.ChatResponse;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -58,4 +63,5 @@ public class ApiService {
 
         return response.getBody();
     }
+
 }

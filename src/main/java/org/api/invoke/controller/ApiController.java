@@ -58,7 +58,7 @@ public class ApiController {
 
         @PostMapping("/agent")
         public String chat(@RequestBody ChatRequest request) {
-            return chatService.askAI(request.getMessage());
+            return chatService.askGeminiAI(request.getMessage());
         }
 
 }

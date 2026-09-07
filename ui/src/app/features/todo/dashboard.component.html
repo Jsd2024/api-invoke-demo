@@ -1,0 +1,14 @@
+<section class="summary-grid" aria-label="Task summary">
+  <article class="summary-card summary-card--blue">
+    <div class="summary-icon"><mat-icon>format_list_bulleted</mat-icon></div>
+    <div><span class="summary-label">Total tasks</span><strong>{{ total() }}</strong><span class="summary-note">In your workspace</span></div>
+  </article>
+  <article class="summary-card summary-card--green">
+    <div class="summary-icon"><mat-icon>task_alt</mat-icon></div>
+    <div><span class="summary-label">Completed</span><strong>{{ completed() }}</strong><span class="summary-note">Nice work, keep going</span></div>
+  </article>
+  <article class="summary-card summary-card--amber">
+    <div class="summary-icon"><mat-icon>schedule</mat-icon></div>
+    <div><span class="summary-label">Pending</span><strong>{{ pending() }}</strong><span class="summary-note">Ready for your focus</span></div>
+  </article>
+</section>

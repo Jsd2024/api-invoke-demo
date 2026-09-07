@@ -1,0 +1,18 @@
+.todo-panel { padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.9); box-shadow: var(--shadow); }
+.panel-heading, .toolbar, .task-entry { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.eyebrow { margin: 0 0 5px; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+h2 { margin: 0; color: var(--ink); font-size: 24px; letter-spacing: -.03em; }
+.task-count { color: var(--muted); font-size: 13px; }
+.task-entry { margin: 24px 0 10px; align-items: flex-start; }
+.task-input, .search-field { flex: 1; }
+.add-button { height: 56px; padding: 0 20px; border-radius: 12px; background: var(--accent); color: white; font-weight: 700; }
+.add-button mat-icon { margin-right: 5px; }
+.toolbar { justify-content: flex-start; margin-bottom: 8px; }
+.search-field { max-width: 330px; }
+.filter-field { width: 145px; }
+.task-input, .search-field, .filter-field { --mdc-outlined-text-field-container-shape: 12px; }
+.empty-state { display: grid; justify-items: center; padding: 52px 20px 38px; color: var(--muted); text-align: center; }
+.empty-state mat-icon { width: 42px; height: 42px; color: #6bb58c; font-size: 42px; }
+.empty-state h3 { margin: 12px 0 3px; color: var(--ink); }
+.empty-state p { margin: 0; font-size: 13px; }
+@media (max-width: 600px) { .todo-panel { padding: 18px 14px; border-radius: 16px; } .task-entry, .toolbar { align-items: stretch; flex-direction: column; } .task-input, .search-field, .filter-field, .add-button { width: 100%; max-width: none; } .add-button { height: 46px; } }

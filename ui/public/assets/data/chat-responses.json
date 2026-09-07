@@ -1,0 +1,10 @@
+{
+  "responses": {
+    "hello": "Hello! How can I help you today?",
+    "hi": "Hi Ashwin! Need help managing your tasks?",
+    "add task": "You can add a task using the input field above.",
+    "completed": "Completed tasks appear in the completed section.",
+    "help": "I can answer simple todo-related questions.",
+    "default": "Sorry, I am using mock data right now. Backend integration can be added later."
+  }
+}

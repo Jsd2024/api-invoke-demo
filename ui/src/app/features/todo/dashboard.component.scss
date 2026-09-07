@@ -1,0 +1,12 @@
+.summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.summary-card { display: flex; align-items: center; gap: 16px; padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.84); box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease; }
+.summary-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-strong); }
+.summary-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; }
+.summary-icon mat-icon { color: currentColor; }
+.summary-card--blue .summary-icon { background: #e5efff; color: #3e72c5; }
+.summary-card--green .summary-icon { background: #e4f6eb; color: #2d9462; }
+.summary-card--amber .summary-icon { background: #fff1d8; color: #c07a27; }
+.summary-label, .summary-note { display: block; color: var(--muted); font-size: 12px; }
+.summary-label { font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.summary-card strong { display: block; margin: 3px 0; color: var(--ink); font-size: 29px; line-height: 1; }
+@media (max-width: 700px) { .summary-grid { grid-template-columns: 1fr; gap: 10px; } .summary-card { padding: 16px; } }

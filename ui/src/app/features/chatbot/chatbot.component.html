@@ -1,0 +1,7 @@
+@if (isOpen()) {
+  <section class="chat-window" aria-label="Todo Assistant chat">
+    <header class="chat-header"><div class="bot-avatar"><mat-icon>smart_toy</mat-icon></div><div><strong>Todo Assistant</strong><span>Here when you need a hand</span></div><button mat-icon-button (click)="toggle()" aria-label="Minimize chat"><mat-icon>remove</mat-icon></button></header>
+    <div class="message-list" #messageList aria-live="polite"><div class="date-label">TODAY</div>@for (message of messages(); track message.id) { <app-chat-message [message]="message" /> } @if (isTyping()) { <div class="typing"><span></span><span></span><span></span></div> }</div>
+    <footer class="chat-footer"><mat-form-field appearance="outline"><input matInput [ngModel]="draft()" (ngModelChange)="draft.set($event)" (keyup.enter)="send()" placeholder="Ask about your tasks..." aria-label="Chat message"><button mat-icon-button matSuffix (click)="send()" [disabled]="!draft().trim() || isTyping()" aria-label="Send message"><mat-icon>arrow_upward</mat-icon></button></mat-form-field></footer>
+  </section>
+} @else { <button class="chat-fab" mat-fab (click)="toggle()" aria-label="Open Todo Assistant" matTooltip="Open Todo Assistant"><mat-icon>smart_toy</mat-icon><span class="pulse"></span></button> }

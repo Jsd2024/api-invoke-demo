@@ -1,0 +1,32 @@
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand-mark"><mat-icon>check_circle</mat-icon></div>
+    <div class="brand-copy">
+      <strong>Smart Todo</strong><span>Assistant</span>
+    </div>
+    <div class="topbar-spacer"></div>
+    <div class="status-chip"><span></span> All synced</div>
+    <button mat-icon-button aria-label="Notifications">
+      <mat-icon>notifications_none</mat-icon>
+    </button>
+    <div class="user-avatar" aria-label="User profile">MK</div>
+  </header>
+  <main class="content">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">Thursday, September 3</p>
+        <h1>Make space for <em>what matters.</em></h1>
+        <p class="intro">A calmer way to keep your day moving forward.</p>
+      </div>
+      <div class="focus-badge">
+        <mat-icon>wb_sunny</mat-icon
+        ><span
+          ><strong>Good morning, Mada</strong
+          ><small>Let’s get a few things done.</small></span
+        >
+      </div>
+    </section>
+    <app-dashboard /><app-todo-list />
+  </main>
+</div>
+<app-chatbot />

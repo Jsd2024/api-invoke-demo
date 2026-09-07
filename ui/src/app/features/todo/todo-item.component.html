@@ -1,0 +1,8 @@
+<article class="task-row" [class.task-row--done]="task.completed">
+  <mat-checkbox [checked]="task.completed" (change)="toggled.emit()" [attr.aria-label]="'Mark ' + task.title + ' complete'"></mat-checkbox>
+  <span class="task-title">{{ task.title }}</span>
+  <div class="task-actions">
+    <button mat-icon-button (click)="edited.emit()" aria-label="Edit task" matTooltip="Edit task"><mat-icon>edit</mat-icon></button>
+    <button mat-icon-button (click)="deleted.emit()" aria-label="Delete task" matTooltip="Delete task"><mat-icon>delete_outline</mat-icon></button>
+  </div>
+</article>

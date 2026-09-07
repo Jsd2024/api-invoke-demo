@@ -1,0 +1,9 @@
+.task-row { display: flex; align-items: center; min-height: 66px; padding: 8px 10px 8px 4px; border-bottom: 1px solid #edf0f5; animation: task-in .35s ease both; transition: background .2s ease, opacity .3s ease; }
+.task-row:hover { background: #f8fafc; }
+.task-title { flex: 1; color: var(--ink); font-size: 15px; transition: color .25s ease, text-decoration .25s ease; }
+.task-row--done .task-title { color: #98a2b3; text-decoration: line-through; }
+.task-actions { display: flex; opacity: 0; transition: opacity .2s ease; }
+.task-row:hover .task-actions, .task-actions:focus-within { opacity: 1; }
+.task-actions mat-icon { color: #8792a5; font-size: 19px; }
+@keyframes task-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 700px) { .task-actions { opacity: 1; } }

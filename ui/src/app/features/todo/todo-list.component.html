@@ -1,0 +1,18 @@
+<section class="todo-panel" aria-labelledby="tasks-heading">
+  <div class="panel-heading">
+    <div><p class="eyebrow">Your workspace</p><h2 id="tasks-heading">Today’s focus</h2></div>
+    <span class="task-count">{{ filteredTasks().length }} shown</span>
+  </div>
+  <div class="task-entry">
+    <mat-form-field appearance="outline" class="task-input"><mat-icon matPrefix>add</mat-icon><input matInput [ngModel]="newTaskTitle()" (ngModelChange)="newTaskTitle.set($event)" (keyup.enter)="addTask()" placeholder="Add a task" aria-label="New task"></mat-form-field>
+    <button mat-flat-button class="add-button" (click)="addTask()"><mat-icon>add</mat-icon><span>Add task</span></button>
+  </div>
+  <div class="toolbar">
+    <mat-form-field appearance="outline" class="search-field"><mat-icon matPrefix>search</mat-icon><input matInput #searchBox (input)="updateSearch(searchBox.value)" placeholder="Search tasks" aria-label="Search tasks"></mat-form-field>
+    <mat-form-field appearance="outline" class="filter-field"><mat-select [value]="filter()" (selectionChange)="setFilter($event.value)" aria-label="Filter tasks"><mat-option value="all">All tasks</mat-option><mat-option value="active">Active</mat-option><mat-option value="completed">Completed</mat-option></mat-select></mat-form-field>
+  </div>
+  <div class="task-list">
+    @for (task of filteredTasks(); track task.id) { <app-todo-item [task]="task" (toggled)="todoService.toggleTask(task.id)" (edited)="editTask(task)" (deleted)="todoService.deleteTask(task.id)" /> }
+    @empty { <div class="empty-state"><mat-icon>check_circle_outline</mat-icon><h3>All clear here</h3><p>Add a task and make some progress.</p></div> }
+  </div>
+</section>

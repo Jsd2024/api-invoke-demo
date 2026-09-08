@@ -57,8 +57,17 @@ public class ApiController {
 
 
         @PostMapping("/agent")
-        public String chat(@RequestBody ChatRequest request) {
-            return chatService.askGeminiAI(request.getMessage());
+        public ChatResponse chat(@RequestBody ChatRequest request) {
+            String agentResponse;
+            ChatResponse chatResponse;
+            try {
+                agentResponse = chatService.askGeminiAI(request.getMessage());
+                chatResponse = new ChatResponse(agentResponse);
+            } catch (Exception e) {
+                log.error("Exception in ApiController :{}", String.valueOf(e));
+                throw new RuntimeException(e);
+            }
+            return chatResponse;
         }
 
 }

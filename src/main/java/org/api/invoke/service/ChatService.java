@@ -1,6 +1,6 @@
 package org.api.invoke.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import lombok.extern.slf4j.Slf4j;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,6 +8,7 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+@Slf4j
 @Service
 public class ChatService {
 
@@ -73,7 +74,8 @@ public class ChatService {
                     .get(0)
                     .path("text")
                     .asText();
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
+            log.error("Exception in ChatService :{}", String.valueOf(e));
             throw new RuntimeException(e);
         }
         return finalRespInStr;

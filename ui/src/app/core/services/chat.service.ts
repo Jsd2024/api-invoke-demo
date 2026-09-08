@@ -6,7 +6,7 @@ import { ChatApiResponse, ChatResponses } from '../../shared/models/chat.model';
 @Injectable({ providedIn: 'root' })
 export class ChatService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:8081/api/chat';
+  private readonly apiUrl = 'http://localhost:8081/api/agent';//'http://localhost:8081/api/chat';
   
   //'assets/data/chat-responses.json';
 
